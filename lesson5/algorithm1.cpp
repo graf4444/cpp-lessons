@@ -48,7 +48,7 @@ int main()
     cout << endl;
 
     print_vector("before: ", vec);
-    random_shuffle(vec.begin(), vec.end());
+    // random_shuffle(vec.begin(), vec.end());
     print_vector("after: ", vec);
     
     return 0;
