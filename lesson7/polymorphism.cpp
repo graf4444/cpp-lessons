@@ -42,9 +42,8 @@ class Rectangle : public Shape {
 };
 
 
-// нужно выяснить как вызывать getArea() для конкртеного типа (Circle или Rectangle)
-void print_area(Shape shape) {
-    cout << shape.getArea() << endl;
+void print_area(Shape* shape) {
+    cout << shape->getArea() << endl;
 }
 
 
@@ -53,8 +52,8 @@ int main()
     Circle circle(10);
     Rectangle rectangle(15, 100);
 
-    print_area(circle);
-    print_area(rectangle);
+    print_area(&circle);
+    print_area(&rectangle);
 
     cout << circle.getArea() << endl;
     cout << rectangle.getArea() << endl;
