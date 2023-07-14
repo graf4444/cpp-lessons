@@ -11,19 +11,23 @@ void solve() {
 	cin >> n >> a >> b;
 	n--;
 	int l = 0;
-	int r = 1e9 + 100;
-	while (l < r) {
+	int r = 1e9 + 1000;
+	while (l < r - 1) {
 		int m = (l + r) / 2;
 		if (ask(m, a, b) < n) {
-			l = m + 1;
+			l = m;
 		} else {
-			r = m - 1;
+			r = m;
 		}
 	}
-	cout << min(a, b) + l << endl;
-
-
+	if (ask(l, a, b) >= n) r = l;
+	cout << min(a, b) + r << endl;
 }
+//4 9
+//3 18
+//2 19
+//1 27
+//0 29
 
 int main() {
 	ios::sync_with_stdio(false);
